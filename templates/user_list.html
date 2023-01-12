@@ -1,0 +1,79 @@
+{%extends 'dashboard_base.html'%}
+{%load static%}
+{%load crispy_forms_tags %}
+{%block body_block%}
+
+
+<!--**********************************
+    Content body start
+***********************************-->
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Users</a></li>
+            </ol>
+        </div>
+
+        <table id="" class="table table-striped">
+            <thead>
+
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+
+
+            </tr>
+
+            </thead>
+            <tbody>
+
+
+            {%for a in users%}
+            <tr>
+
+
+                <td>{{a.first_name}}</td>
+
+
+                <td> {{a.last_name}}</td>
+
+
+
+
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
