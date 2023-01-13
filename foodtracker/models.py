@@ -31,6 +31,13 @@ class Food(models.Model):
     protein = models.DecimalField(max_digits=7, decimal_places=2)
     category = models.ForeignKey(FoodCategory, on_delete=models.CASCADE, related_name='food_category')
     food_image = models.ImageField(upload_to='images/',null=True)
+    options=(
+        ("Approved","Approved"),
+        ("Declined","Declined"),
+        ("Disabled","Disabled"),
+
+    )
+    status=models.CharField(max_length=120,choices=options,default="Disabled")
 
     def __str__(self):
         return f'{self.food_name} - category: {self.category}'

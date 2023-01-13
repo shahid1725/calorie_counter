@@ -9,7 +9,7 @@ class FoodForm(forms.ModelForm):
     '''
     class Meta:
         model = Food
-        fields = ['food_name', 'quantity', 'calories', 'fat', 'carbohydrates', 'protein', 'category','food_image']
+        fields = ['food_name', 'quantity', 'calories', 'fat', 'carbohydrates', 'protein', 'category','food_image','status']
 
     def __init__(self, *args, **kwargs):
         super(FoodForm, self).__init__(*args, **kwargs)

@@ -44,7 +44,7 @@ def register(request):
                 'categories': FoodCategory.objects.all()
             })
         login(request, user)
-        return HttpResponseRedirect(reverse('index'))
+        return HttpResponseRedirect(reverse('login'))
     else:
         return render(request, 'register.html', {
             'categories': FoodCategory.objects.all()
@@ -84,7 +84,7 @@ def food_list_view(request):
     It renders a page that displays all food items
     Food items are paginated: 4 per page
     '''
-    foods = Food.objects.all()
+    foods = Food.objects.filter(status="Approved")
 
     for food in foods:
         food.image = food.get_images.first()
@@ -182,7 +182,13 @@ def add_new_food(request):
         form=UserFoodForm(request.POST,request.FILES)
         if form.is_valid():
 
-            form.save()                 #model form
+
+            if Food.objects.filter(status="Approved"):
+
+
+
+
+                form.save()                 #model form
 
             messages.success(request, "This Food Item Added Successfully")
             return redirect("index")  #from url
@@ -302,7 +308,7 @@ def category_details_view(request, category_name):
         return HttpResponseRedirect(reverse('login'))
 
     category = FoodCategory.objects.get(category_name=category_name)
-    foods = Food.objects.filter(category=category)
+    foods = Food.objects.filter(category=category,status="Approved")
 
     for food in foods:
         food.image = food.get_images.first()
@@ -322,7 +328,7 @@ def category_details_view(request, category_name):
         'categories': FoodCategory.objects.all(),
         'foods': foods,
         'foods_count': foods.count(),
-        'foodimg': Food.objects.filter(category=category),
+        'foodimg': Food.objects.filter(category=category,status="Approved"),
         'pages': pages,
         'title': category.category_name
     })
