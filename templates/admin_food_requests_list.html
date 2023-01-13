@@ -45,13 +45,13 @@ Content body start
 
                                         </div>
                                     </div>
-                                    <p class="price">{{fd.food_name}}</p>
-                                       <h6><strong>{{fd.quantity}}</strong></h6>
-                                    <h5>Calories : {{fd.calories}}</h5>
+                                       <p class="price">{{fd.food_name}}</p>
+                                       <h6><strong>Quantity : {{fd.quantity}}</strong></h6>
+                                    <h5 class="text-danger">Calories : {{fd.calories}}Kcal</h5>
                                     <h5>Fat : {{fd.fat}}</h5>
-                                    <h5>Carbohydrates : {{fd.carbohydrates}}</h5>
+                                    <h5 class="text-warning">Carbohydrates : {{fd.carbohydrates}}</h5>
                                     <h5>Protien : {{fd.protein}}</h5>
-                                    <h5>Category : {{fd.category_food}}</h5>
+                                    <h5 class="text-success">Category : {{fd.category_food}}</h5>
 
 
                                     <a href="{%url 'approve_food_request' fd.id%}"><button class="btn btn-success"><i class="fa fa-pen"></i>Approve</button></a>

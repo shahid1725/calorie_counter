@@ -6,9 +6,28 @@
 <div class='py-4 mt-auto'>
     <div class='container px-4'>
 
-        <h3>{{ title }}</h3>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+
+
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <h1 class="text-center p-5 mt-3 text-success"><strong>Food List</strong></h1>
+
 
         <div class='row justify-content-center'>
+
+
+
+
+
+
+
+
+
 
         {% for food in pages %}
             <div class='col-sm-12 col-md-12 col-lg-4 col-xl-3 d-flex align-items-stretch'>
@@ -24,13 +43,13 @@
                     </a>
 
                     <div class='card-body'>
-                        <h4 class='card-title'>
+                        <h4 class='card-title text-center'>
                             <!-- Food name -->
                             <strong>{{ food.food_name }}</strong>
                         </h4>
 
                         <p class='card-text'>
-                            <div class='my-3'>
+                            <div class='my-3 text-success'>
                                 <!-- Food category -->
                                 Category: {{ food.category }}
                             </div>
@@ -39,14 +58,14 @@
                         <p class='card-text'>
                             <div class='my-3'>
                                 <!-- Food calories -->
-                                <strong>{{ food.calories}} calories</strong> in {{ food.quantity|floatformat:0 }} grams
+                                <strong>{{ food.calories}} <span class="text-danger">calories</span></strong> in {{ food.quantity|floatformat:0 }} grams
                             </div>
                         </p>
 
                         <p class='card-text'>
                             <div class='my-3'>
-                                <a href="{% url 'food_details' food.id %}" type='button' class='btn btn-link'>
-                                    View details
+                                <a href="{% url 'food_details' food.id %}">
+                                    <button class="btn btn-success w-100"> View details</button>
                                 </a>
                             </div>
                         </p>

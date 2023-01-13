@@ -7,7 +7,7 @@ from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from dashboard.models import UserFood
+# from dashboard.models import UserFood
 from dashboard.forms import UserFoodForm
 from .models import User, Food, FoodCategory, FoodLog, Image, Weight
 from .forms import FoodForm, ImageForm
