@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Webbytes - Dashboard </title>
+    <title>Calorie Counter - Dashboard </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{%static 'images/favicon.png'%}">
     <link href="{%static 'vendor/owl-carousel/owl.carousel.css'%}" rel="stylesheet">
@@ -895,13 +895,13 @@
                 </a>
 
                 </li>
-                <li><a class="has-arrow ai-icon" href="{%url 'category'%}"  aria-expanded="false">
+                <li><a class="has-arrow ai-icon" href="{%url 'category'%}" aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Food Categories</span>
                 </a>
 
                 </li>
-         <li><a class="has-arrow ai-icon" href="{%url 'food'%}" aria-expanded="false">
+                <li><a class="has-arrow ai-icon" href="{%url 'food'%}" aria-expanded="false">
                     <i class="flaticon-381-controls-3"></i>
                     <span class="nav-text">Food</span>
                 </a>
@@ -912,77 +912,82 @@
                 </a>
 
                 </li>
-<!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
-<!--                    <i class="flaticon-381-heart"></i>-->
-<!--                    <span class="nav-text">Services</span>-->
-<!--                </a>-->
-<!--                    <ul aria-expanded="false">-->
-<!--                        <li><a href="">Add Service</a></li>-->
+                <li><a class="has-arrow ai-icon" href="{%url 'foodrequest'%}" aria-expanded="false">
+                    <i class="flaticon-381-heart"></i>
+                    <span class="nav-text">Food Requests</span>
+                </a>
+                </li>
+                <!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
+                <!--                    <i class="flaticon-381-heart"></i>-->
+                <!--                    <span class="nav-text">Services</span>-->
+                <!--                </a>-->
+                <!--                    <ul aria-expanded="false">-->
+                <!--                        <li><a href="">Add Service</a></li>-->
 
 
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
-<!--                    <i class="flaticon-381-settings-2"></i>-->
-<!--                    <span class="nav-text">Testimonial</span>-->
-<!--                </a>-->
-<!--                    <ul aria-expanded="false">-->
-<!--                        <li><a href="">Add Testimonial</a></li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
+                <!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
+                <!--                    <i class="flaticon-381-settings-2"></i>-->
+                <!--                    <span class="nav-text">Testimonial</span>-->
+                <!--                </a>-->
+                <!--                    <ul aria-expanded="false">-->
+                <!--                        <li><a href="">Add Testimonial</a></li>-->
 
 
-<!--                    </ul>-->
-<!--                </li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
 
 
-<!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
-<!--                    <i class="flaticon-381-notepad"></i>-->
-<!--                    <span class="nav-text">About Us</span>-->
-<!--                </a>-->
-<!--                    <ul aria-expanded="false">-->
-<!--                        <li><a href="">Add About</a></li>-->
+                <!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
+                <!--                    <i class="flaticon-381-notepad"></i>-->
+                <!--                    <span class="nav-text">About Us</span>-->
+                <!--                </a>-->
+                <!--                    <ul aria-expanded="false">-->
+                <!--                        <li><a href="">Add About</a></li>-->
 
 
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
-<!--                    <i class="flaticon-381-network"></i>-->
-<!--                    <span class="nav-text">Projects</span>-->
-<!--                </a>-->
-<!--                    <ul aria-expanded="false">-->
-<!--                        <li><a href="">Add Projects</a></li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
+                <!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
+                <!--                    <i class="flaticon-381-network"></i>-->
+                <!--                    <span class="nav-text">Projects</span>-->
+                <!--                </a>-->
+                <!--                    <ul aria-expanded="false">-->
+                <!--                        <li><a href="">Add Projects</a></li>-->
 
-<!--                    </ul>-->
-<!--                </li>-->
-
-
-<!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
-<!--                    <i class="flaticon-381-networking"></i>-->
-<!--                    <span class="nav-text">Certificates</span>-->
-<!--                </a>-->
-<!--                    <ul aria-expanded="false">-->
-<!--                        <li><a href="">Add Certificates</a></li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
 
 
-<!--                    </ul>-->
-<!--                </li>-->
+                <!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
+                <!--                    <i class="flaticon-381-networking"></i>-->
+                <!--                    <span class="nav-text">Certificates</span>-->
+                <!--                </a>-->
+                <!--                    <ul aria-expanded="false">-->
+                <!--                        <li><a href="">Add Certificates</a></li>-->
 
 
-<!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
-<!--                    <i class="flaticon-381-layer-1"></i>-->
-<!--                    <span class="nav-text">Education</span>-->
-<!--                </a>-->
-<!--                    <ul aria-expanded="false">-->
-<!--                        <li><a href="">Add Education</a></li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
 
 
-<!--                    </ul>-->
-<!--                </li>-->
+                <!--                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">-->
+                <!--                    <i class="flaticon-381-layer-1"></i>-->
+                <!--                    <span class="nav-text">Education</span>-->
+                <!--                </a>-->
+                <!--                    <ul aria-expanded="false">-->
+                <!--                        <li><a href="">Add Education</a></li>-->
 
-<!--                <li><a class=" ai-icon" href="" aria-expanded="false">-->
-<!--                    <i class="flaticon-381-notepad"></i>-->
-<!--                    <span class="nav-text">Enquiries</span>-->
-<!--                </a>-->
-<!--                </li>-->
+
+                <!--                    </ul>-->
+                <!--                </li>-->
+
+                <!--                <li><a class=" ai-icon" href="" aria-expanded="false">-->
+                <!--                    <i class="flaticon-381-notepad"></i>-->
+                <!--                    <span class="nav-text">Enquiries</span>-->
+                <!--                </a>-->
+                <!--                </li>-->
             </ul>
 
             <div class="plus-box">
@@ -1576,6 +1581,7 @@
 			}, 1000); 
 		});
 		
+
 
 
 </script>

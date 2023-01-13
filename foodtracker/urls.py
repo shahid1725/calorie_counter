@@ -11,7 +11,8 @@ urlpatterns = [
     path('profile/weight/delete/<int:weight_id>', views.weight_log_delete, name='weight_log_delete'),
 
     path('food/list', views.food_list_view, name='food_list'),
-    path('food/add', views.food_add_view, name='food_add'),
+    # path('food/add', views.food_add_view, name='food_add'),
+    path('food/add', views.add_new_food, name='food_add'),
     path('food/foodlog', views.food_log_view, name='food_log'),
     path('food/foodlog/delete/<int:food_id>', views.food_log_delete, name='food_log_delete'),
     path('food/<str:food_id>', views.food_details_view, name='food_details'),

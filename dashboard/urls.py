@@ -59,6 +59,12 @@ urlpatterns = [
 
     path('users', views.ListUserView.as_view(), name="users"),
 
+#-------------------------- Food Requests -----------------------------------
+
+    path('food/requests', views.ListFoodRequestsView.as_view(), name="foodrequest"),
+    path('food/requests/delete/<int:id>', views.delete_food_requests, name="delete_food_request"),
+    path('food/requests/approve/<int:id>', views.Save.as_view(), name="approve_food_request"),
+
 
 
 ]

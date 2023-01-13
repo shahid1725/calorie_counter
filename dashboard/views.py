@@ -5,6 +5,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DetailView
 import datetime
 from . import forms
+from .models import UserFood
 from foodtracker.models import FoodCategory,Food,User
 from foodtracker.forms import FoodCategoryForm,FoodForm
 
@@ -133,3 +134,84 @@ def delete_food(request, id):
   data.delete()
   return HttpResponseRedirect(reverse('food'))
 
+#----------------------- Requests --------------------------
+
+class ListFoodRequestsView(ListView):
+    template_name = "admin_food_requests_list.html"
+    model = UserFood
+    context_object_name = "requests"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["requests"] = self.model.objects.all()
+        return context
+
+
+
+
+def delete_food_requests(request, id):
+  data = UserFood.objects.get(id=id)
+  data.delete()
+  return HttpResponseRedirect(reverse('foodrequest'))
+
+# def save_food_requests(request, id):
+#   data = UserFood.objects.get(id=id)
+#   print(data)
+
+# class Save(TemplateView):
+#
+#     def post(self, request, *args, **kwargs):
+#         data = UserFood.objects.get(id=id)
+#
+#         food_name = self.request.data.get("food_name")
+#         quantity = self.request.data.get("quantity")
+#         calories = self.request.data.get("calories")
+#         fat = self.request.data.get("fat")
+#         carbohydrates = self.request.data.get("carbohydrates")
+#         protein = self.request.data.get("protein")
+#         category_food = self.request.data.get("category_food")
+#         food_image = self.request.data.get("food_image")
+#
+#         a = Food.objects.create(food_name=food_name, quantity=quantity
+#                                        , calories=calories, fat=fat,carbohydrates=carbohydrates, protein=protein
+#                                        , category_food=category_food, food_image=food_image)
+#         # serializer = DataSerializer(queryset, many=True)
+#         # return self.list(request, *args, **kwargs)
+#         a.save()
+#
+#         return HttpResponseRedirect(reverse('foodrequest'),data)
+
+
+class Save(TemplateView):
+    def get(self, request, *args, **kwargs):
+
+        return render(request, "admin_food_requests_list.html", )
+
+    def post(self, request):
+        context = {}
+        data = UserFood.objects.get(id=id)
+
+        # form = forms.EmployeeCreationForm(request.POST)
+
+        if data.is_valid():
+
+            food_name = request.POST.get("food_name")
+            quantity = request.POST.get("quantity")
+            calories = request.POST.get("calories")
+            fat = request.POST.get("fat")
+            carbohydrates = request.POST.get("carbohydrates")
+            protein = request.POST.get("protein")
+            category_food = request.POST.get("category_food")
+            food_image = request.POST.get("food_image")
+
+            a = Food.objects.create(food_name=food_name, quantity=quantity, calories=calories, fat=fat, carbohydrates=carbohydrates,
+                        protein=protein, category_food=category_food, food_image=food_image)
+
+
+            a.save()
+
+            return redirect('foodrequest')
+
+        else:
+            context["data"] = data
+            return render(request, "admin_food_requests_list.html", data)

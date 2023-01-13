@@ -3,6 +3,16 @@ from rest_framework import serializers
 from foodtracker.models import FoodCategory,Food,User,\
     FoodLog,Weight
 
+
+class FoodSerializer(ModelSerializer):
+    food_name = serializers.StringRelatedField()
+    category = serializers.StringRelatedField()
+
+    class Meta:
+        model = Food
+        fields = "__all__"
+
+
 class FoodCategorySerializer(ModelSerializer):
 
     class Meta:

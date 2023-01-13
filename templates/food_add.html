@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Food Tracker | Add Food Item{% endblock %}
+{% block title %}Calorie Counter | Add Food Item{% endblock %}
 
 {% block body %}
 <div class='py-4 mt-auto'>
@@ -29,7 +29,8 @@
                                     <form action="{% url 'food_add' %}" method='POST' enctype='multipart/form-data'>
                                         {% csrf_token %}
                                         <div class='form-group'>
-                                            {{ food_form.as_p }}
+<!--                                            {{ food_form.as_p }}-->
+                                            {{ form.as_p }}
     
                                             {{ image_form.management_form }}
                                             {% for form in image_form %}
