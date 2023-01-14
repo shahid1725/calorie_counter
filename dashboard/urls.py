@@ -6,7 +6,7 @@ urlpatterns = [
 
     # -------------------------- AUTHENTICATION -----------------------------------
 
-    path('signup', views.Signup.as_view(), name="signup"),
+    # path('signup', views.Signup.as_view(), name="signup"),
     path('signin', views.Login.as_view(), name="adminlogin"),
     path('logout', views.signout, name="logout"),
 

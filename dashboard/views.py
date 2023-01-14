@@ -13,22 +13,22 @@ from foodtracker.forms import FoodCategoryForm,FoodForm
 
 # Create your views here.
 
-class Signup(TemplateView):
-    def get(self, request, *args, **kwargs):
-        form = forms.UserRegistrationForm()
-        context = {}
-        context["form"] = form
-        return render(request, "admin_signup.html", context)
-
-    def post(self,request):
-        context={}
-        form = forms.UserRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("adminlogin")
-        else:
-            context["form"] = form
-            return render(request, "admin_signup.html", context)
+# class Signup(TemplateView):
+#     def get(self, request, *args, **kwargs):
+#         form = forms.UserRegistrationForm()
+#         context = {}
+#         context["form"] = form
+#         return render(request, "admin_signup.html", context)
+#
+#     def post(self,request):
+#         context={}
+#         form = forms.UserRegistrationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect("adminlogin")
+#         else:
+#             context["form"] = form
+#             return render(request, "admin_signup.html", context)
 
 class Login(TemplateView):
     def get(self, request, *args, **kwargs):
@@ -42,7 +42,7 @@ class Login(TemplateView):
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
             user = authenticate(request, username=username, password=password)
-            if (user):
+            if (user.is_superuser):
                 login(request, user)
                 return redirect("dashboard")
 
@@ -103,7 +103,7 @@ class ListFoodView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["food"] = self.model.objects.all()
+        context["food"] = self.model.objects.filter(status="Approved")
         return context
 
 class EditFoodView(UpdateView):
